@@ -6,13 +6,23 @@ import com.collections.Exceptions.EmployeeNotFoundException;
 import com.collections.Exceptions.EmployeeStorageIsFullException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class EmployeeService {
 
-    private List<Employee> employees = new ArrayList<>();
+    List<Employee> employees = List.of(
+            new Employee("Egor", "Veselov"),
+            new Employee("Soup", "Maktavish"),
+            new Employee("Saymon", "Railly"),
+            new Employee("Price", "Capitan"),
+            new Employee("Gas", "British"),
+            new Employee("Vladimir", "Makarov"),
+            new Employee("Shepard", "Goldeneagle"),
+            new Employee("Lasvell", "Alkatal"),
+            new Employee("Ghost", "Mowend")
+    );
+
     private static final int maxEmploee = 10;
 
     public void addEmployee(String firstName, String lastName) {
